@@ -59,7 +59,6 @@ if (!PORT) {
 }
 
 const server = app.listen(PORT, async () => {
-  // QUEUE Comment this out ONLY IF you want to completely clear the queue
   await QueueService.clearQueue();
   console.log(`Server is up on http://localhost:${PORT}/api`);
   console.log(`Swagger documentation is on the http://localhost:${PORT}/api-docs`);

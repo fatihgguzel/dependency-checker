@@ -4,7 +4,6 @@ import { error } from '../helpers';
 import joiValidator from '../helpers/joi/joiValidator';
 import { AppError } from '../errors/AppError';
 
-// CONSIDER: removing query and params since they are unnecessary, for this project.
 interface IValidateOptions {
   body?: joi.Schema;
   query?: joi.Schema;

@@ -6,6 +6,4 @@ describe('decodeBase64', () => {
     const decodedString = decodeBase64({ encodedString });
     expect(decodedString).toEqual('Hello World');
   });
-
-  // Everything is base64 basically, so no negative path.
 });
