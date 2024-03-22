@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '${PORT:-3000}:3000'
+    volumes:
+      - .:/usr/src/app
+    environment:
+      ENV_NAME: PRODUCTION
+      PORT: 3000
+      REDIS_PORT: 6379
+      REDIS_HOST: redis
+      SENDGRID_API_KEY: // TODO add your API key
+    depends_on:
+      - redis
+
+  redis:
+    image: 'redis:latest'
+    ports:
+      - '${REDIS_PORT:-6379}:6379'
